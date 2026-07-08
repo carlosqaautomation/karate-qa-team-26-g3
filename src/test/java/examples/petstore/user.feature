@@ -62,3 +62,10 @@ Feature: Casos de prueba de el moodulo User
     """
     When method put
     Then status 200
+
+  Scenario: CP-04 eliminar usuario
+    * def username = "JOSE"
+    Given url "https://petstore.swagger.io/v2"
+    And path "user" , username
+    When method delete
+    Then status 200
