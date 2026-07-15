@@ -1,0 +1,513 @@
+{
+  "info": {
+    "_postman_id": "6b5110ac-6b54-4b39-bbf1-4ae547113632",
+    "name": "API TESTING 2026 - 3",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "23885332"
+  },
+  "item": [
+    {
+      "name": "PETSTORE",
+      "item": [
+        {
+          "name": "LOGIN-USER",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "https://petstore.swagger.io/v2/user/login?username=CALOS&password=QATEAM",
+              "protocol": "https",
+              "host": [
+                "petstore",
+                "swagger",
+                "io"
+              ],
+              "path": [
+                "v2",
+                "user",
+                "login"
+              ],
+              "query": [
+                {
+                  "key": "username",
+                  "value": "CALOS"
+                },
+                {
+                  "key": "password",
+                  "value": "QATEAM"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "GET USER FOR ID",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "https://petstore.swagger.io/v2/user/:username",
+              "protocol": "https",
+              "host": [
+                "petstore",
+                "swagger",
+                "io"
+              ],
+              "path": [
+                "v2",
+                "user",
+                ":username"
+              ],
+              "query": [
+                {
+                  "key": "USERNAME",
+                  "value": "CARLOS",
+                  "type": "text",
+                  "disabled": true
+                }
+              ],
+              "variable": [
+                {
+                  "key": "username",
+                  "value": "CARLOS"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "CREATE USER",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"id\": 0,\n  \"username\": \"JOSE\",\n  \"firstName\": \"abc\",\n  \"lastName\": \"perez\",\n  \"email\": \"abc\",\n  \"password\": \"11111\",\n  \"phone\": \"21233333\",\n  \"userStatus\": 0\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "https://petstore.swagger.io/v2/user",
+              "protocol": "https",
+              "host": [
+                "petstore",
+                "swagger",
+                "io"
+              ],
+              "path": [
+                "v2",
+                "user"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "update user",
+          "request": {
+            "method": "PUT",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"id\": 0,\n  \"username\": \"pepe\",\n  \"firstName\": \"carlos\",\n  \"lastName\": \"zambrano\",\n  \"email\": \"abc@gmail.com\",\n  \"password\": \"123456\",\n  \"phone\": \"98765443\",\n  \"userStatus\": 0\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "https://petstore.swagger.io/v2/user/:username",
+              "protocol": "https",
+              "host": [
+                "petstore",
+                "swagger",
+                "io"
+              ],
+              "path": [
+                "v2",
+                "user",
+                ":username"
+              ],
+              "variable": [
+                {
+                  "key": "username",
+                  "value": "pepito"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "deleteUser",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "https://petstore.swagger.io/v2/user/:username",
+              "protocol": "https",
+              "host": [
+                "petstore",
+                "swagger",
+                "io"
+              ],
+              "path": [
+                "v2",
+                "user",
+                ":username"
+              ],
+              "variable": [
+                {
+                  "key": "username",
+                  "value": "pepito"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "create token",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"username\" : \"admin\",\n    \"password\" : \"password123\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "https://restful-booker.herokuapp.com/auth",
+              "protocol": "https",
+              "host": [
+                "restful-booker",
+                "herokuapp",
+                "com"
+              ],
+              "path": [
+                "auth"
+              ]
+            },
+            "description": "Generated from cURL: curl -X POST \\\n  https://restful-booker.herokuapp.com/auth \\\n  -H 'Content-Type: application/json' \\\n  -d '{\n    \"username\" : \"admin\",\n    \"password\" : \"password123\"\n}'"
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "booking",
+      "item": [
+        {
+          "name": "create-booking",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/x-www-form-urlencoded"
+              }
+            ],
+            "body": {
+              "mode": "urlencoded",
+              "urlencoded": [
+                {
+                  "type": "text",
+                  "key": "firstname",
+                  "value": "Jim"
+                },
+                {
+                  "type": "text",
+                  "key": "lastname",
+                  "value": "Brown"
+                },
+                {
+                  "type": "text",
+                  "key": "totalprice",
+                  "value": "111"
+                },
+                {
+                  "type": "text",
+                  "key": "depositpaid",
+                  "value": "true"
+                },
+                {
+                  "type": "text",
+                  "key": "bookingdates[checkin]",
+                  "value": "2018-01-01"
+                },
+                {
+                  "type": "text",
+                  "key": "bookingdates[checkout]",
+                  "value": "2018-01-02"
+                }
+              ]
+            },
+            "url": {
+              "raw": "https://restful-booker.herokuapp.com/booking",
+              "protocol": "https",
+              "host": [
+                "restful-booker",
+                "herokuapp",
+                "com"
+              ],
+              "path": [
+                "booking"
+              ]
+            },
+            "description": "Generated from cURL: curl -X POST \\\n  https://restful-booker.herokuapp.com/booking \\\n  -H 'Content-Type: application/x-www-form-urlencoded' \\\n  -d 'firstname=Jim&lastname=Brown&totalprice=111&depositpaid=true&bookingdates%5Bcheckin%5D=2018-01-01&bookingdates%5Bcheckout%5D=2018-01-02'"
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "bankapi",
+      "item": [
+        {
+          "name": "registerUser",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"email\": \"carloszs@bankapi.com\",\n  \"password\": \"password123\",\n  \"fullName\": \"Carlos QA\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{url-bankapi}}/api/auth/register",
+              "host": [
+                "{{url-bankapi}}"
+              ],
+              "path": [
+                "api",
+                "auth",
+                "register"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "login",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"email\": \"carloszs@bankapi.com\",\n  \"password\": \"password123\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{url-bankapi}}/api/auth/login",
+              "host": [
+                "{{url-bankapi}}"
+              ],
+              "path": [
+                "api",
+                "auth",
+                "login"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "listarCuentas",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI0MmNiNDdlOS03YmVhLTQ1Y2UtYWVlMS1mZDlmOTFhMDFkYWUiLCJlbWFpbCI6ImNhcmxvc3pzQGJhbmthcGkuY29tIiwiaWF0IjoxNzg0MDgyMTU3LCJleHAiOjE3ODQxNjg1NTd9.fYEJLEUAaGk-uhae5uAeYbp4Lz_qPlURAZdXDBNJgpU",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{url-bankapi}}/api/accounts",
+              "host": [
+                "{{url-bankapi}}"
+              ],
+              "path": [
+                "api",
+                "accounts"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "crearCuenta",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI0MmNiNDdlOS03YmVhLTQ1Y2UtYWVlMS1mZDlmOTFhMDFkYWUiLCJlbWFpbCI6ImNhcmxvc3pzQGJhbmthcGkuY29tIiwiaWF0IjoxNzg0MDgyMTU3LCJleHAiOjE3ODQxNjg1NTd9.fYEJLEUAaGk-uhae5uAeYbp4Lz_qPlURAZdXDBNJgpU",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"accountType\": \"savings\",\n  \"currency\": \"USD\",\n  \"initialBalance\": 20\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{url-bankapi}}/api/accounts",
+              "host": [
+                "{{url-bankapi}}"
+              ],
+              "path": [
+                "api",
+                "accounts"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "New Request",
+      "request": {
+        "method": "GET",
+        "header": []
+      },
+      "response": []
+    },
+    {
+      "name": "prueba",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/x-www-form-urlencoded"
+          }
+        ],
+        "body": {
+          "mode": "urlencoded",
+          "urlencoded": [
+            {
+              "type": "text",
+              "key": "firstname",
+              "value": "Jim"
+            },
+            {
+              "type": "text",
+              "key": "lastname",
+              "value": "Brown"
+            },
+            {
+              "type": "text",
+              "key": "totalprice",
+              "value": "111"
+            },
+            {
+              "type": "text",
+              "key": "depositpaid",
+              "value": "true"
+            },
+            {
+              "type": "text",
+              "key": "bookingdates[checkin]",
+              "value": "2018-01-01"
+            },
+            {
+              "type": "text",
+              "key": "bookingdates[checkout]",
+              "value": "2018-01-02"
+            }
+          ]
+        },
+        "url": {
+          "raw": "https://restful-booker.herokuapp.com/booking",
+          "protocol": "https",
+          "host": [
+            "restful-booker",
+            "herokuapp",
+            "com"
+          ],
+          "path": [
+            "booking"
+          ]
+        },
+        "description": "Generated from cURL: curl -X POST \\\n  https://restful-booker.herokuapp.com/booking \\\n  -H 'Content-Type: application/x-www-form-urlencoded' \\\n  -d 'firstname=Jim&lastname=Brown&totalprice=111&depositpaid=true&bookingdates%5Bcheckin%5D=2018-01-01&bookingdates%5Bcheckout%5D=2018-01-02'"
+      },
+      "response": []
+    }
+  ],
+  "event": [
+    {
+      "listen": "prerequest",
+      "script": {
+        "type": "text/javascript",
+        "packages": {},
+        "requests": {},
+        "exec": [
+          ""
+        ]
+      }
+    },
+    {
+      "listen": "test",
+      "script": {
+        "type": "text/javascript",
+        "packages": {},
+        "requests": {},
+        "exec": [
+          ""
+        ]
+      }
+    }
+  ],
+  "variable": [
+    {
+      "key": "url-bankapi",
+      "value": ""
+    }
+  ]
+}
