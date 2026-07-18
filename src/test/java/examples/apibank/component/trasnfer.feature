@@ -1,7 +1,7 @@
 Feature: Pruebas de el modulo de transferencia
 
   Background:
-    * def apiLogin = call read('loginUser.feature@login')
+    * def apiLogin = call read('../loginUser.feature@login')
     * def token = apiLogin.token
     Given url "https://bankapi-n1t8.onrender.com"
 
