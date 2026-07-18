@@ -1,7 +1,6 @@
 Feature: Casos de prueba de registro de usuario
 
   Background:
-    * def apiLogin = call read('loginUser.feature@login')
     Given url "https://bankapi-n1t8.onrender.com"
 
   Scenario: CP01-Registro de usuario Exitoso
