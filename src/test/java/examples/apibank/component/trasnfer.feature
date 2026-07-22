@@ -5,6 +5,7 @@ Feature: Pruebas de el modulo de transferencia
     * def token = apiLogin.token
     Given url "https://bankapi-n1t8.onrender.com"
 
+  @apibank @transfer @create @smoke
   Scenario Outline: CP01-Transferencia exitosa
     Given path "/api/transfers"
     And header Authorization = "Bearer " + token

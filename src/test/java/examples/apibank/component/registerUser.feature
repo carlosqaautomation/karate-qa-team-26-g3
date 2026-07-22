@@ -3,6 +3,7 @@ Feature: Casos de prueba de registro de usuario
   Background:
     Given url "https://bankapi-n1t8.onrender.com"
 
+  @apibank @register @smoke
   Scenario: CP01-Registro de usuario Exitoso
     * def data =
     """
@@ -16,9 +17,10 @@ Feature: Casos de prueba de registro de usuario
     And request data
     When method post
     Then status 201
-    And match response.data.user contains { "fullName": "Carlos QA"}
+     And match response.data.user contains { "fullName": "Carlos QA"}
 
 
+  @apibank @register @negative
   Scenario: CP02-Registro usuario existente
     * def data =
     """

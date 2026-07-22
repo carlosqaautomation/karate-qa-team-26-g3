@@ -1,26 +1,48 @@
 name: QA Pipeline
 
 on:
-  #Ejecuta cuando subo cambios en la rama main
-  #push:
-    #branches:
-     # - main
 
   #Ejecucion a demanda
   workflow_dispatch:
-
-  pull_request:
-    branches:
-      - main
+    inputs:
+      tags:
+        description: 'Tags de prueba'
+        required: true
+        default: '@smoke'
 
 jobs:
   build:
     runs-on: ubuntu-22.04
 
     steps:
-      - name: Prueba inicial
-        run: echo "Mi primer workflow"
 
-      - name: Ejecutando pruebas
-        run: echo "Iniciando ejecucion"
+      - name: Instalacion de Java 17 y Maven
+        uses: actions/setup-java@v6
+        with:
+          distribution: 'temurin'
+          java-version: '17'
+          cache: 'maven'
+
+      - name: Clonar repositorio
+        uses: actions/checkout@v4
+
+      - name: Ejecutar pruebas
+        run: mvn clean test -Dkarate.tags=${{ inputs.tags }}
+
+      - name: Visualizar reporte
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: karate-report
+          path: target/karate-reports
+
+
+    ##PASOS
+    #INSTALACION DE JAVA 11,17
+    #INSTALACION DE MAVEN
+    #CLONAR EL REPOSITORIO
+
+    #EJECUTAR LAS PRUEBAS
+    #VISUALIZAR REPORTE
+
 

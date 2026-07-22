@@ -15,6 +15,7 @@ Feature: Flujos e2e pruebas
     * def tokenAuth = 'Bearer '+ token
 
 
+  @apibank @e2e @flow @transfer @smoke
   Scenario: CPTR1 Flujo e2e transferencia exitosa
     * def apiAccount = call read('account.feature@account')
     * def fromAccount = apiAccount.accountId
