@@ -13,7 +13,7 @@ Feature: Flujo E2E de Transferencias Bancarias
     * def minimumBalance = 50
     * def depositAmount = 100
 
-  @flujoe2e
+  @flujoe2e @apibank @e2e @flow @transfer @complete @smoke
   Scenario: CP01-Flujo E2E completo de transferencia bancaria
 
     # PASO 1: Iniciar sesion - Reutilizando plantilla de login

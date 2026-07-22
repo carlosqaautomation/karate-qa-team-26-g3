@@ -6,12 +6,14 @@ Feature: Modulo de cuentas
     * def token = apiLogin.token
     Given url "https://bankapi-n1t8.onrender.com"
 
+  @apibank @account @list @smoke
   Scenario: CP02-Listar cuentas ok con call
     Given header Authorization = 'Bearer '+ token
     And path "/api/accounts"
     When method get
-    Then status 200
+     Then status 200
 
+  @apibank @account @create
   Scenario Outline: Crear cuenta masiva <id>
     Given path "/api/accounts"
     And header Authorization = 'Bearer '+ token
@@ -44,6 +46,7 @@ Feature: Modulo de cuentas
 
 
 
+  @apibank @account @list
   Scenario: CP01-listar cuentas OK
     Given url "https://bankapi-n1t8.onrender.com"
     And path "api/auth/login"
