@@ -14,3 +14,6 @@ jobs:
       - name: Prueba inicial
         run: echo "Mi primer workflow"
 
+      - name: Ejecutando pruebas
+        run: echo "Iniciando ejecucion"
+
